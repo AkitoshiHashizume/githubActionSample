@@ -13,11 +13,10 @@ jobs:
     env:
       ENV_VALUE_AT_JOBS: defined by workflow level
       GITHUB_ACTOR_ENV: ${{github.actor}}
-      GITHUB_ACTOR_ENV_OTHER: ${GITHUB_ACTOR}
     steps:
       - run: |
           echo "${GITHUB_ACTOR_ENV} : ${{inputs.hoge}}"
       - run: |
           echo "${ENV_VALUE} : ${ENV_VALUE_AT_JOBS}"
       - run: |
-          echo "${GITHUB_ACTOR_ENV_OTHER}"
+          echo "${GITHUB_ACTOR}"
