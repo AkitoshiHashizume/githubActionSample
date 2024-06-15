@@ -1,0 +1,14 @@
+name: Github Output
+on: push
+jobs:
+  output:
+    name: Github Output
+    runs-on: ubuntu-latest
+    steps:
+      - id: source
+        run: |
+          echo "key=value" >> ${GITHUB_OUTPUT}
+      - env:
+          RESULT: ${steps.source.output.key}}
+        run: |
+          echo "$RESULT"
