@@ -9,6 +9,6 @@ jobs:
         run: |
           echo "key=value" >> ${GITHUB_OUTPUT}
       - env:
-          RESULT: ${steps.source.output.key}}
+          RESULT: ${{steps.source.output.key}}
         run: |
           echo "$RESULT"
