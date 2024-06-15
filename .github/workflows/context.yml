@@ -1,0 +1,13 @@
+name: context
+on:
+  workflow_dispatch:
+    inputs:
+      hoge:
+        type: string
+        description: sample
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{github.actor}} : ${{inputs.hoge}}"
