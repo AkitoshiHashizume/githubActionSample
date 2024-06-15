@@ -13,6 +13,6 @@ jobs:
         run: |
           echo "$RESULT"
       - run:
-          echo "key2=value" >> ${GITHUB_ENV}
+          echo "key2=value2" >> ${GITHUB_ENV}
       - run: |
           echo "$key2"
