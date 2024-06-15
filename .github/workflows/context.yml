@@ -17,3 +17,5 @@ jobs:
           echo "${{github.actor}} : ${{inputs.hoge}}"
       - run: |
           echo "${{env.ENV_VALUE}} : ${{env.ENV_VALUE_AT_JOBS}}"
+      - run: |
+          echo "${GITHUB_ACTOR}"
