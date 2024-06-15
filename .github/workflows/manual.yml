@@ -5,9 +5,16 @@ on:
       greeting:
         type: string
         description: sample
+      log-level:
+        type: choice
+        description: log-level
+        options:
+          - info
+          - warn
+          - error
 jobs:
   manual:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "${{inputs.greeting}}"
+          echo "${{inputs.greeting}} : ${{inputs.log-level}}" 
