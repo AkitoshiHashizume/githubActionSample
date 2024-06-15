@@ -12,3 +12,7 @@ jobs:
           RESULT: ${{steps.source.outputs.key}}
         run: |
           echo "$RESULT"
+      - run:
+          echo "key2=value" >> ${GITHUB_ENV}
+      - run: |
+          echo "$key2"
