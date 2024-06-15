@@ -5,9 +5,15 @@ on:
       hoge:
         type: string
         description: sample
+env:
+  ENV_VALUE: defined by workflow level
 jobs:
   context:
     runs-on: ubuntu-latest
+    env:
+      ENV_VALUE_AT_JOBS: defined by workflow level
     steps:
       - run: |
           echo "${{github.actor}} : ${{inputs.hoge}}"
+      - run: |
+          echo "${{env.ENV_VALUE}} : ${{env.ENV_VALUE_AT_JOBS}}"
