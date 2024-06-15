@@ -1,0 +1,10 @@
+name: schedule
+on:
+  schedule:
+    - cron: '0 7 * * MON-FRI' # 月曜〜金曜の16時（JST）
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "schedule"
