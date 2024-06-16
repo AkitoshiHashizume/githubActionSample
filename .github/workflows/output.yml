@@ -7,12 +7,12 @@ jobs:
     steps:
       - id: source
         run: |
-          echo "key=value" >> ${GITHUB_OUTPUT}
+          echo "key=value" >> "${GITHUB_OUTPUT}"
       - env:
           RESULT: ${{steps.source.outputs.key}}
         run: |
           echo "$RESULT"
       - run:
-          echo "key2=value2" >> ${GITHUB_ENV}
+          echo "key2=value2" >> "${GITHUB_ENV}"
       - run: |
           echo "$key2"
